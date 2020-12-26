@@ -5,9 +5,14 @@ import { wordsArray } from "./API";
 class Store {
   wordList = wordsArray;
   currentWord = "";
+  currentWordDef = [];
 
   updateWord(newWord) {
     this.currentWord = newWord;
+  }
+
+  updateCurrentDefinition(defList) {
+    this.currentWordDef = defList;
   }
 
   get wordsCount() {
