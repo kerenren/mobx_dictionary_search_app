@@ -1,17 +1,21 @@
-import { observable, action, computed, makeObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
+
+import { wordsArray } from "./API";
 
 class Store {
-  @observable words = [];
+  wordList = wordsArray;
+  currentWord = "";
 
-  @action updateWords(newWord) {
-    this.words.push(newWord);
+  updateWord(newWord) {
+    this.currentWord = newWord;
   }
 
-  @computed get wordsCount() {
-    return this.words.length;
+  get wordsCount() {
+    return this.currentWord.length;
   }
+
   constructor() {
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 }
 
