@@ -6,14 +6,12 @@ import { getDefByWord } from "../store/API";
 
 const SearchResultDef = observer(() => {
   const store = useContext(StoreContext);
-  console.log(store);
 
   const updateDefinitions = async (word) => {
     const wordDef = await getDefByWord(word);
-    if (wordDef.list) {
+    if (wordDef) {
       store.updateCurrentDefinition(wordDef.list);
     }
-    return wordDef;
   };
 
   useEffect(() => {
@@ -30,7 +28,7 @@ const SearchResultDef = observer(() => {
           {store.currentWordDef
             .filter((defItem) => defItem.thumbs_down < 10)
             .map((defItem) => {
-              return <li id={defItem.defid}>{defItem.definition}</li>;
+              return <li key={defItem.defid}>{defItem.definition}</li>;
             })}
         </ul>
       )}
