@@ -1,1 +1,1 @@
-# diciontary_search_app
+# dictionary_search_app
