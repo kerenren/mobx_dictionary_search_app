@@ -5,10 +5,11 @@ import { observer } from "mobx-react";
 
 import SearchResultTitle from "./SearchResultTitle";
 import { getDefByWord } from "../store/API";
+import DefNotFound from "./DefNotFound";
 import { mq } from "../store/mediaQuery";
 import { StoreContext } from "../App";
 
-const SearchResultDef = observer(() => {
+const ContentRight = observer(() => {
   const store = useContext(StoreContext);
 
   const updateDefinitions = async (word) => {
@@ -36,17 +37,15 @@ const SearchResultDef = observer(() => {
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
-        justifyContent:"flex-start"
+        justifyContent: "flex-start",
       })}
     >
-
-        <SearchResultTitle title="Definition" />
-      
+      <SearchResultTitle title="Definition" />
 
       <ul
         css={mq({
           width: "100%",
-          height:"100%",
+          height: "100%",
           wordWrap: "break-word",
           listStyle: "none",
           paddingLeft: "0",
@@ -57,7 +56,8 @@ const SearchResultDef = observer(() => {
           },
         })}
       >
-        {store.currentWordDef && qualityDefinitionList.length > 0 && (
+        {store.currentWordDef &&
+          qualityDefinitionList.length > 0 &&
           qualityDefinitionList.map((defItem) => {
             return (
               <li
@@ -81,25 +81,11 @@ const SearchResultDef = observer(() => {
                 {defItem.definition}
               </li>
             );
-          })
-        ) }
-       {store.currentWord && !qualityDefinitionList.length &&
-        (
-          <div css={{ height: "100%" }}>
-            <div css={{ lineHeight: 1.58 }}>
-              👀 The current searched word definition is not available or qualified enough, please
-              try another word.
-            </div>
-            <img
-              src="not-found.jpg"
-              alt="not found image"
-              css={{ width: "100%" }}
-            />
-          </div>
-        )}
+          })}
+        {store.currentWord && !qualityDefinitionList.length && <DefNotFound />}
       </ul>
     </div>
   );
 });
 
-export default SearchResultDef;
+export default ContentRight;

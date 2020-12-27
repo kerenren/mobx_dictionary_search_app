@@ -3,8 +3,8 @@
 import React, { createContext } from "react";
 
 import { mq } from "../store/mediaQuery";
-import Comparison from "./Comparison";
-import SearchResultDef from "./SearchResultDef";
+import ContentLeft from "./ContentLeft";
+import ContentRight from "./ContentRight";
 
 const Content = () => {
   return (
@@ -29,8 +29,8 @@ const Content = () => {
         },
       })}
     >
-      <Comparison />
-      <SearchResultDef />
+      <ContentLeft />
+      <ContentRight />
     </div>
   );
 };
