@@ -8,7 +8,7 @@ import { mq } from "../store/mediaQuery";
 import { StoreContext } from "../App";
 import PieChart from "./PieChart";
 
-const Comparison = observer(() => {
+const ContentLeft = observer(() => {
   const store = useContext(StoreContext);
   const letter = () => {
     if (store.currentWord) {
@@ -91,4 +91,4 @@ const Comparison = observer(() => {
   );
 });
 
-export default Comparison;
+export default ContentLeft;
