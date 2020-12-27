@@ -1,6 +1,6 @@
 # dictionary_search_app
 
-A dictionary search APP, which is able to count search letters in the offline dictionary as well as get word definitions and other data from the Urban dictionary API. The Content is managed by Mobx. This is a responsive APP written with emotion-react without any other CSS library or framework used.
+A dictionary search APP, which is able to count search letters in the offline dictionary as well as get word definitions and other data from the Urban dictionary API. The state is managed by Mobx. This is a responsive APP written with emotion-react without any other CSS library or framework used.
 
 ## Get Started
 
