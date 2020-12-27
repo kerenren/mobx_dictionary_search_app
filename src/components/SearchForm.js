@@ -9,8 +9,12 @@ const SearchForm = () => {
   let searchTerm;
   const handleSubmit = (e, store) => {
     e.preventDefault();
-    store.updateWord(searchTerm.value);
-    searchTerm.value = "";
+    if (!searchTerm.value){
+      alert("search term is required")
+    } else{
+      store.updateWord(searchTerm.value);
+      searchTerm.value = "";
+    }
   };
 
   return (
