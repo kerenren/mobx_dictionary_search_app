@@ -3,10 +3,10 @@
 import React, { useContext, useEffect } from "react";
 import { observer } from "mobx-react";
 
-import { StoreContext } from "../App";
+import SearchResultTitle from "./SearchResultTitle";
 import { getDefByWord } from "../store/API";
-import PieChart from "./PieChart";
 import { mq } from "../store/mediaQuery";
+import { StoreContext } from "../App";
 
 const SearchResultDef = observer(() => {
   const store = useContext(StoreContext);
@@ -18,9 +18,9 @@ const SearchResultDef = observer(() => {
     }
   };
 
-  const onDefinition = () => {
-    console.log("on definition");
-  };
+  const qualityDefinitionList = store.currentWordDef.filter(
+    (defItem) => defItem.thumbs_down < 3
+  );
 
   useEffect(() => {
     if (store.currentWord) {
@@ -35,28 +35,10 @@ const SearchResultDef = observer(() => {
         width: ["90%", "90%", "40%"],
       })}
     >
-      {store.currentWordDef && (
-        <div
-          css={{
-            textTransform: "uppercase",
-            color: "#4183f2",
-            fontSize: "14px",
-            fontWeight: 500,
-            letterSpacing: "0.5px",
-            lineHeight: "16px",
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-          onClick={onDefinition()}
-        >
-          Definition
-        </div>
+      {store.currentWordDef.length > 0 && (
+        <SearchResultTitle title="Definition" />
       )}
 
-      {/* <div css={{ height: "130px" }}>
-        <PieChart />
-      </div> */}
       <ul
         css={mq({
           width: "100%",
@@ -70,16 +52,19 @@ const SearchResultDef = observer(() => {
           },
         })}
       >
-        {store.currentWordDef
-          .filter((defItem) => defItem.thumbs_down < 10)
-          .map((defItem) => {
+        {store.currentWordDef && qualityDefinitionList.length > 0 ? (
+          qualityDefinitionList.map((defItem) => {
             return (
               <li
                 key={defItem.defid}
                 css={{
-                  transition: "0.25s",
+                  transition: "linear 0.25s",
+                  lineHeight: 1.58,
                   "&:hover": {
-                    backgroundColor: "#fafafa",
+                    background:
+                      "linear-gradient(167deg, rgba(117,145,209,1) 0%, rgba(41,65,122,1) 46%, rgba(24,25,25,1) 100%)",
+                    color: "#FDC05D",
+                    fontWeight: "bolder",
                   },
                   boxShadow:
                     "0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05)",
@@ -91,7 +76,20 @@ const SearchResultDef = observer(() => {
                 {defItem.definition}
               </li>
             );
-          })}
+          })
+        ) : (
+          <div css={{ height: "100%" }}>
+            <div css={{ lineHeight: 1.58 }}>
+              👀 The current searched word definition is not available, please
+              try another word.
+            </div>
+            <img
+              src="not-found.jpg"
+              alt="not found image"
+              css={{ height: "100%", width: "100%" }}
+            />
+          </div>
+        )}
       </ul>
     </div>
   );
