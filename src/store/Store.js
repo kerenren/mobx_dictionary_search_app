@@ -33,8 +33,8 @@ class Store {
     return this.wordList.filter((d) => d.includes(this.currentWord)).length;
   }
 
-  repeatedLetterCount () {
-      return this.wordList.filter((d)=>d.match(".*(.)(.*\\1).*")).length
+  repeatedLetterCount() {
+    return this.wordList.filter((d) => d.match("^.*(.)\\1{1}.*$")).length;
   }
 
   constructor() {
