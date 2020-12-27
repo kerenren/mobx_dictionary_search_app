@@ -1,12 +1,16 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { createContext } from "react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react";
 
+import ContentRight from "./ContentRight";
 import { mq } from "../store/mediaQuery";
 import ContentLeft from "./ContentLeft";
-import ContentRight from "./ContentRight";
+import StartSearch from "./StartSearch";
+import { StoreContext } from "../App";
 
-const Content = () => {
+const Content = observer(() => {
+  const store = useContext(StoreContext);
   return (
     <div
       css={mq({
@@ -29,10 +33,11 @@ const Content = () => {
         },
       })}
     >
-      <ContentLeft />
-      <ContentRight />
+      {!store.currentWord && <StartSearch />}
+      {store.currentWord && <ContentLeft />}
+      {store.currentWord && <ContentRight />}
     </div>
   );
-};
+});
 
 export default Content;

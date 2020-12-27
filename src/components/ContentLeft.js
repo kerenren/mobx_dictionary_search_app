@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { observer } from "mobx-react";
 
 import SearchResultTitle from "./SearchResultTitle";
@@ -44,16 +44,15 @@ const ContentLeft = observer(() => {
         justifyContent: "flex-start",
       })}
     >
-      {store.currentWord ? (
+      {store.currentWord && (
         <div
-        css={{
-          fontSize: "15px",
-          lineHeight: 1.58,
-          height: "100%",
-          
-        }}
+          css={{
+            fontSize: "15px",
+            lineHeight: 1.58,
+            height: "100%",
+          }}
         >
-        <SearchResultTitle title="Stats" />
+          <SearchResultTitle title="Stats" />
           <div>
             Words that start with {letter()} :{" "}
             {store.startLetterCount() ? store.startLetterCount() : 0}{" "}
@@ -62,7 +61,7 @@ const ContentLeft = observer(() => {
             Words that end with {letter()} :{" "}
             {store.endLetterCount() ? store.endLetterCount() : 0}
           </div>
-          <div >
+          <div>
             Times that {letter()} appears in dictionary:{" "}
             {store.timesIncludedCount() ? store.timesIncludedCount() : 0}
           </div>
@@ -70,15 +69,6 @@ const ContentLeft = observer(() => {
             Words that have the same letter repeated in conjunction:{" "}
             {store.repeatedLetterCount() ? store.repeatedLetterCount() : 0}
           </div>
-        </div>
-      ) : (
-        <div> 
-          <SearchResultTitle title="Let's start with a word..." />
-          <img
-              src="search.jpg"
-              alt="not found image"
-              css={{ width: "100%" }}
-            />
         </div>
       )}
 
