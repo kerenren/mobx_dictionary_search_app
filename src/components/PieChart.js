@@ -9,25 +9,25 @@ const PieChart = observer(() => {
   const data = [
     {
       id: "Words starting counter",
-      label: `Words that start with ${store.currentWord}`,
+      label: `Starting`,
       value: store.startLetterCount(),
-      color: "hsl(49, 70%, 50%)",
+      color: "hsl(37.3,97.5%,52.7%)",
     },
     {
       id: "Words ending counter",
-      label: `Words that ending with ${store.currentWord}`,
+      label: `Ending`,
       value: store.endLetterCount(),
       color: "hsl(92, 70%, 50%)",
     },
     {
       id: "Times counter",
-      label: `Times that ${store.currentWord} appears in dictionary`,
+      label: `Times`,
       value: store.timesIncludedCount(),
-      color: "hsl(109, 70%, 50%)",
+      color: "hsl(221,50.6%,15.9%)",
     },
     {
       id: "Repeated letter counter",
-      label: "Words that have the same letter repeated in conjunction",
+      label: "repeating",
       value: store.repeatedLetterCount(),
       color: "hsl(37, 70%, 50%)",
     },
@@ -70,49 +70,25 @@ const PieChart = observer(() => {
       fill={[
         {
           match: {
-            id: "ruby",
+            id: "Starting counter",
           },
           id: "dots",
         },
         {
           match: {
-            id: "c",
-          },
-          id: "dots",
-        },
-        {
-          match: {
-            id: "go",
-          },
-          id: "dots",
-        },
-        {
-          match: {
-            id: "python",
-          },
-          id: "dots",
-        },
-        {
-          match: {
-            id: "scala",
+            id: "Ending counter",
           },
           id: "lines",
         },
         {
           match: {
-            id: "lisp",
+            id: "Times counter",
           },
-          id: "lines",
+          id: "dots",
         },
         {
           match: {
-            id: "elixir",
-          },
-          id: "lines",
-        },
-        {
-          match: {
-            id: "javascript",
+            id: "Repeating counter",
           },
           id: "lines",
         },
@@ -125,7 +101,7 @@ const PieChart = observer(() => {
           translateX: 0,
           translateY: 56,
           itemsSpacing: 0,
-          itemWidth: 100,
+          itemWidth: 80,
           itemHeight: 18,
           itemTextColor: "#999",
           itemDirection: "left-to-right",
