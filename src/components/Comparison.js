@@ -37,37 +37,53 @@ const Comparison = observer(() => {
       css={mq({
         width: ["90%", "90%", "60%"],
         marginRight: [0, "40px"],
-        fontSize: "15px",
-        lineHeight: "20px",
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "start",
         justifyContent: "flex-start",
       })}
     >
-      <div>
+      {store.currentWord ? (
+        <div
+        css={{
+          fontSize: "15px",
+          lineHeight: 1.58,
+          height: "100%",
+          
+        }}
+        >
         <SearchResultTitle title="Stats" />
-        <p>
-          Words that start with {letter()} :{" "}
-          {store.startLetterCount() ? store.startLetterCount() : 0}{" "}
-        </p>
-        <p>
-          Words that end with {letter()} :{" "}
-          {store.endLetterCount() ? store.endLetterCount() : 0}
-        </p>
-        <p>
-          Times that {letter()} appears in dictionary:
-          {store.timesIncludedCount() ? store.timesIncludedCount() : 0}
-        </p>
-        <p>
-          Words that have the same letter repeated in conjunction:
-          {store.repeatedLetterCount() ? store.repeatedLetterCount() : 0}
-        </p>{" "}
-      </div>
+          <div>
+            Words that start with {letter()} :{" "}
+            {store.startLetterCount() ? store.startLetterCount() : 0}{" "}
+          </div>
+          <div>
+            Words that end with {letter()} :{" "}
+            {store.endLetterCount() ? store.endLetterCount() : 0}
+          </div>
+          <div >
+            Times that {letter()} appears in dictionary:{" "}
+            {store.timesIncludedCount() ? store.timesIncludedCount() : 0}
+          </div>
+          <div>
+            Words that have the same letter repeated in conjunction:{" "}
+            {store.repeatedLetterCount() ? store.repeatedLetterCount() : 0}
+          </div>
+        </div>
+      ) : (
+        <div> 
+          <SearchResultTitle title="Let's start with a word..." />
+          <img
+              src="search.jpg"
+              alt="not found image"
+              css={{ width: "100%" }}
+            />
+        </div>
+      )}
 
       {store.currentWordDef.length > 0 && (
-        <div css={mq({ height: ["40%", "40%", "60%"], width:"100%" })}>
+        <div css={mq({ height: ["40%", "40%", "60%"], width: "100%" })}>
           <PieChart />
         </div>
       )}
