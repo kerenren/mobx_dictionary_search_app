@@ -23,7 +23,7 @@ function App() {
           textAlign: "center",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           alignItems: "center",
           boxSizing: "border-box",
           width: "100vw",

@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import React, { createContext } from "react";
-import { jsx } from "@emotion/react";
 
 import SearchForm from "./SearchForm";
 import { mq } from "../store/mediaQuery";
@@ -13,8 +12,6 @@ const Header = () => {
         background:
           "linear-gradient(90deg, rgba(26,40,83,1) 0%, rgba(42,47,97,1) 48%, rgba(20,33,61,1) 84%)",
         width: "100vw",
-        position: "sticky",
-        top: 0,
         zIndex: 100,
         color: "white",
         display: "flex",

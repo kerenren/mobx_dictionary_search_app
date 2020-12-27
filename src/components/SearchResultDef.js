@@ -33,6 +33,10 @@ const SearchResultDef = observer(() => {
       css={mq({
         height: "100%",
         width: ["90%", "90%", "40%"],
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent:"center"
       })}
     >
       {store.currentWordDef.length > 0 && (
@@ -42,6 +46,7 @@ const SearchResultDef = observer(() => {
       <ul
         css={mq({
           width: "100%",
+          height:"100%",
           wordWrap: "break-word",
           listStyle: "none",
           paddingLeft: "0",
@@ -86,7 +91,7 @@ const SearchResultDef = observer(() => {
             <img
               src="not-found.jpg"
               alt="not found image"
-              css={{ height: "100%", width: "100%" }}
+              css={{ width: "100%" }}
             />
           </div>
         )}

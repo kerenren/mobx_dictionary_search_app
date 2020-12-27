@@ -40,6 +40,10 @@ const Comparison = observer(() => {
         fontSize: "15px",
         lineHeight: "24px",
         height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       })}
     >
       <div>
@@ -63,7 +67,7 @@ const Comparison = observer(() => {
       </div>
 
       {store.currentWordDef.length > 0 && (
-        <div css={mq({ height: ["40%", "40%", "70%"] })}>
+        <div css={mq({ height: ["40%", "40%", "60%"], width:"100%" })}>
           <PieChart />
         </div>
       )}

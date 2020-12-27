@@ -10,10 +10,9 @@ const Content = () => {
   return (
     <div
       css={mq({
-        width: ["90%", "80%"],
+        width: "90%",
         maxWidth: "100%",
-        minHeight: [0, "20rem"],
-        margin: [0, "100px auto"],
+        margin: [0, "30px auto"],
         display: "flex",
         justifyContent: ["flex-start", "flex-start", "center"],
         alignItems: "center",
