@@ -17,7 +17,11 @@ const StartSearch = () => {
       }}
     >
       <SearchResultTitle title="Let's start with a word..." />
-      <img src="search.jpg" alt="not found image" css={{ width: "90%" }} />
+      <img
+        src="search.jpg"
+        alt="not found image"
+        css={{ height: "90%"}}
+      />
     </div>
   );
 };
