@@ -35,13 +35,13 @@ const SearchResultDef = observer(() => {
         width: ["90%", "90%", "40%"],
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent:"center"
+        alignItems: "start",
+        justifyContent:"flex-start"
       })}
     >
-      {store.currentWordDef.length > 0 && (
+
         <SearchResultTitle title="Definition" />
-      )}
+      
 
       <ul
         css={mq({

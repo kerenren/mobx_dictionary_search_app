@@ -14,7 +14,7 @@ const Content = () => {
         maxWidth: "100%",
         margin: [0, "30px auto"],
         display: "flex",
-        justifyContent: ["flex-start", "flex-start", "center"],
+        justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: ["column", "column", "row"],
         boxShadow: "0 2px 2px 0 rgba(0,0,0,0.12)",

@@ -8,13 +8,13 @@ const PieChart = observer(() => {
   const store = useContext(StoreContext);
   const data = [
     {
-      id: "Words starting counter",
+      id: "Starting counter",
       label: `Starting`,
       value: store.startLetterCount(),
       color: "hsl(37.3,97.5%,52.7%)",
     },
     {
-      id: "Words ending counter",
+      id: "Ending counter",
       label: `Ending`,
       value: store.endLetterCount(),
       color: "hsl(92, 70%, 50%)",
@@ -26,7 +26,7 @@ const PieChart = observer(() => {
       color: "hsl(221,50.6%,15.9%)",
     },
     {
-      id: "Repeated letter counter",
+      id: "Repeating counter",
       label: "repeating",
       value: store.repeatedLetterCount(),
       color: "hsl(37, 70%, 50%)",

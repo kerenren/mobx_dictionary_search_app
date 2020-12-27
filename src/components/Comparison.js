@@ -38,12 +38,12 @@ const Comparison = observer(() => {
         width: ["90%", "90%", "60%"],
         marginRight: [0, "40px"],
         fontSize: "15px",
-        lineHeight: "24px",
+        lineHeight: "20px",
         height: "100%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start",
       })}
     >
       <div>
