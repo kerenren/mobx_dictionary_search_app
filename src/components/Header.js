@@ -34,7 +34,7 @@ const Header = () => {
         >
           Kelly's dictionary app
         </h1>
-        <span css={{ fontsize: "16px" }}>Make your words meaningful</span>
+        <span css={{ fontsize: "16px" }}>Make your words counted</span>
       </div>
       <div
         css={mq({

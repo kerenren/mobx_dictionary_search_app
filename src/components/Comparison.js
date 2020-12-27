@@ -3,8 +3,10 @@
 import React, { useContext, useEffect } from "react";
 import { observer } from "mobx-react";
 
-import { StoreContext } from "../App";
+import SearchResultTitle from "./SearchResultTitle";
 import { mq } from "../store/mediaQuery";
+import { StoreContext } from "../App";
+import PieChart from "./PieChart";
 
 const Comparison = observer(() => {
   const store = useContext(StoreContext);
@@ -34,14 +36,14 @@ const Comparison = observer(() => {
     <div
       css={mq({
         width: ["90%", "90%", "60%"],
+        marginRight: [0, "40px"],
         fontSize: "15px",
         lineHeight: "24px",
-        height: "70%",
+        height: "100%",
       })}
     >
       <div>
-        {" "}
-        <h2 css={{ textTransform: "uppercase" }}>Stats</h2>
+        <SearchResultTitle title="Stats" />
         <p>
           Words that start with {letter()} :{" "}
           {store.startLetterCount() ? store.startLetterCount() : 0}{" "}
@@ -59,6 +61,12 @@ const Comparison = observer(() => {
           {store.repeatedLetterCount() ? store.repeatedLetterCount() : 0}
         </p>{" "}
       </div>
+
+      {store.currentWordDef.length > 0 && (
+        <div css={mq({ height: ["40%", "40%", "70%"] })}>
+          <PieChart />
+        </div>
+      )}
     </div>
   );
 });
