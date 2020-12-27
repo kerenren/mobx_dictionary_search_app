@@ -2,8 +2,8 @@
 
 import React, { createContext } from "react";
 
-import SearchForm from "./SearchForm";
 import { mq } from "../store/mediaQuery";
+import SearchForm from "./SearchForm";
 
 const Header = () => {
   return (

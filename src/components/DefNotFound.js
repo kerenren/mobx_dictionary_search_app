@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
 const DefNotFound = () => {
   return (

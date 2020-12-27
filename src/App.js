@@ -2,13 +2,11 @@
 
 import React, { createContext } from "react";
 
-import "./styles/custom.css";
-import { mq } from "./store/mediaQuery";
-import Header from "./components/Header";
 import Content from "./components/Content";
 import storeInstance from "./store/Store";
-import Comparison from "./components/Comparison";
-import SearchResultDef from "./components/SearchResultDef";
+import Header from "./components/Header";
+import { mq } from "./store/mediaQuery";
+import "./styles/custom.css";
 
 export const StoreContext = createContext();
 

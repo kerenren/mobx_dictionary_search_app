@@ -4,18 +4,17 @@ import React, { useContext } from "react";
 import { observer } from "mobx-react";
 
 import SearchResultTitle from "./SearchResultTitle";
-import DefItem from "./DefItem"
 import { mq } from "../store/mediaQuery";
 import DefNotFound from "./DefNotFound";
 import { StoreContext } from "../App";
-
+import DefItem from "./DefItem";
 
 const DefinitionsList = observer(() => {
-    const store = useContext(StoreContext);
+  const store = useContext(StoreContext);
 
-    const qualityDefinitionList = store.currentWordDef.filter(
-        (defItem) => defItem.thumbs_down < 3
-      );
+  const qualityDefinitionList = store.currentWordDef.filter(
+    (defItem) => defItem.thumbs_down < 3
+  );
 
   return (
     <>
@@ -38,10 +37,7 @@ const DefinitionsList = observer(() => {
         {store.currentWordDef &&
           qualityDefinitionList.length > 0 &&
           qualityDefinitionList.map((defItem) => {
-            return (
-           
-            <DefItem defItem={defItem}/>
-            );
+            return <DefItem defItem={defItem} />;
           })}
         {store.currentWord && !qualityDefinitionList.length && <DefNotFound />}
       </ul>
@@ -49,4 +45,4 @@ const DefinitionsList = observer(() => {
   );
 });
 
-export default DefinitionsList
+export default DefinitionsList;

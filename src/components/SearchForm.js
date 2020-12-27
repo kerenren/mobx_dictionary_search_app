@@ -1,17 +1,16 @@
 /** @jsxImportSource @emotion/react */
 
 import React from "react";
-import { StoreContext } from "../App";
 
-import { jsx } from "@emotion/react";
+import { StoreContext } from "../App";
 
 const SearchForm = () => {
   let searchTerm;
   const handleSubmit = (e, store) => {
     e.preventDefault();
-    if (!searchTerm.value){
-      alert("search term is required")
-    } else{
+    if (!searchTerm.value) {
+      alert("search term is required");
+    } else {
       store.updateWord(searchTerm.value);
       searchTerm.value = "";
     }

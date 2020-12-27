@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
+
 import React from "react";
-
-
 
 const SearchResultTitle = ({ title }) => {
   return (
@@ -19,4 +18,4 @@ const SearchResultTitle = ({ title }) => {
   );
 };
 
-export default SearchResultTitle
+export default SearchResultTitle;
