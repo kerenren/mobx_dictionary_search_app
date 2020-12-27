@@ -4,7 +4,7 @@ import React, { createContext } from "react";
 import { jsx } from "@emotion/react";
 
 import SearchForm from "./SearchForm";
-import { mq } from "../styles/global";
+import { mq } from "../store/mediaQuery";
 
 const Header = () => {
   return (
