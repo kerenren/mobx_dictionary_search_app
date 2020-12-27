@@ -23,7 +23,7 @@ const SearchResultDef = observer(() => {
   );
 
   useEffect(() => {
-    if (store.currentWord) {
+    if (store.currentWord && store.currentWord !== "") {
       updateDefinitions(store.currentWord);
     }
   }, [store.currentWord]);
@@ -57,7 +57,7 @@ const SearchResultDef = observer(() => {
           },
         })}
       >
-        {store.currentWordDef && qualityDefinitionList.length > 0 ? (
+        {store.currentWordDef && qualityDefinitionList.length > 0 && (
           qualityDefinitionList.map((defItem) => {
             return (
               <li
@@ -82,10 +82,12 @@ const SearchResultDef = observer(() => {
               </li>
             );
           })
-        ) : (
+        ) }
+       {store.currentWord && !qualityDefinitionList.length &&
+        (
           <div css={{ height: "100%" }}>
             <div css={{ lineHeight: 1.58 }}>
-              👀 The current searched word definition is not available, please
+              👀 The current searched word definition is not available or qualified enough, please
               try another word.
             </div>
             <img
