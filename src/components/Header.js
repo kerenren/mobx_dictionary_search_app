@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { createContext } from "react";
+import React from "react";
 
 import { mq } from "../store/mediaQuery";
 import SearchForm from "./SearchForm";

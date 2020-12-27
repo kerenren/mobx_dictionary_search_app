@@ -9,7 +9,7 @@ const DefNotFound = () => {
         👀 The current searched word definition is not available or qualified
         enough, please try another word.
       </div>
-      <img src="not-found.jpg" alt="not found image" css={{ width: "100%" }} />
+      <img src="not-found.jpg" alt="not found" css={{ width: "100%" }} />
     </div>
   );
 };
