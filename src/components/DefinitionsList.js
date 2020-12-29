@@ -27,6 +27,7 @@ const DefinitionsList = observer(() => {
           wordWrap: "break-word",
           listStyle: "none",
           paddingLeft: "0",
+          margin:"-16px 0",
           "&:after": {
             content: '""',
             display: "block",

@@ -1,5 +1,12 @@
+body {
+  min-height: 550px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -8,7 +15,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(26, 40, 83, 1);
+  -webkit-box-shadow: inset 0 0 6px rgb(32, 58, 138);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -18,4 +25,10 @@
     rgba(42, 47, 97, 1) 48%,
     rgba(20, 33, 61, 1) 84%
   );
+}
+
+@media screen and (max-width: 567px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 }

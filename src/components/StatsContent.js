@@ -37,10 +37,11 @@ const StatsContent = observer(() => {
       css={mq({
         width: ["90%", "90%", "60%"],
         marginRight: [0, "40px"],
+        paddingBottom:['24px',0],
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "start",
+        alignItems: ["start", "start", "center"],
         justifyContent: "flex-start",
       })}
     >
@@ -70,7 +71,12 @@ const StatsContent = observer(() => {
       )}
 
       {store.currentWordDef.length > 0 && (
-        <div css={mq({ height: ["200px", "280px"], width: "100%" })}>
+        <div
+          css={mq({
+            height: ["200px", "200px", "200px", "280px"],
+            width: ["380px", "380px", "380px", "430px"],
+          })}
+        >
           <PieChart />
         </div>
       )}

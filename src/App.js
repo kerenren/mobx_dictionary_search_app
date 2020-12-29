@@ -39,7 +39,7 @@ function App() {
             alignItems: "center",
             justifyContent: "center",
             height: "calc(100vh - 200px)",
-            width:["100vw", "80vw"]
+            width:["100%", "80vw"]
           })}
         >
           <Content />

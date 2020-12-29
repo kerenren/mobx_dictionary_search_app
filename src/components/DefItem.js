@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
 import React from "react";
+import { mq } from "../store/mediaQuery";
 
 const DefItem = ({ defItem }) => {
   return (
     <li
       key={defItem.defid}
-      css={{
+      css={mq({
         transition: "linear 0.25s",
         lineHeight: 1.58,
         "&:hover": {
@@ -18,9 +19,9 @@ const DefItem = ({ defItem }) => {
         boxShadow:
           "0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05)",
         borderRadius: "0 0.5rem 0 0.5rem",
-        margin: "1.75rem 0",
-        padding: "1rem",
-      }}
+        margin: ["0.8rem 0","1.75rem 0"],
+        padding: ["0.5rem","1rem"],
+      })}
     >
       {defItem.definition}
     </li>
