@@ -12,9 +12,19 @@ import DefItem from "./DefItem";
 const DefinitionsList = observer(() => {
   const store = useContext(StoreContext);
 
-  const qualityDefinitionList = store.currentWordDef.filter(
-    (defItem) => defItem.thumbs_down < 3
-  );
+  const qualityDefinitionList = store.currentWordDef
+    .filter((defItem) => defItem.thumbs_down < 3)
+    .filter((defItem) => defItem.definition.length > 1);
+
+  const isErrorMsg = () => {
+    if (
+      store.currentWordDef[0] === "failed to request" ||
+      store.currentWord[0] === "missing definition" ||
+      !qualityDefinitionList.length
+    ) {
+      return <DefNotFound />;
+    } else return null;
+  };
 
   return (
     <>
@@ -37,12 +47,10 @@ const DefinitionsList = observer(() => {
       >
         {store.currentWordDef &&
           qualityDefinitionList.length > 0 &&
-          qualityDefinitionList
-            .filter((defItem) => defItem.definition.length > 1)
-            .map((defItem) => {
-              return <DefItem defItem={defItem} />;
-            })}
-        {store.currentWordDef[0] === "failed to request" && <DefNotFound />}
+          qualityDefinitionList.map((defItem) => {
+            return <DefItem defItem={defItem} />;
+          })}
+        {isErrorMsg()}
       </ul>
     </>
   );

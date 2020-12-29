@@ -17,9 +17,13 @@ const DefinitionContent = observer(() => {
       store.updateCurrentDefinition(["failed to request"]);
     } else if (response.status === 200) {
       const wordDef = response.data;
-      if (wordDef) {
+      if (wordDef.list.length > 0) {
         store.updateCurrentDefinition(wordDef.list);
+      } else {
+        store.updateCurrentDefinition(["missing definition"]);
       }
+    } else {
+      console.log(response);
     }
   };
 
