@@ -12,9 +12,14 @@ const DefinitionContent = observer(() => {
   const store = useContext(StoreContext);
 
   const updateDefinitions = async (word) => {
-    const wordDef = await getDefByWord(word);
-    if (wordDef) {
-      store.updateCurrentDefinition(wordDef.list);
+    const response = await getDefByWord(word);
+    if (!response) {
+      store.updateCurrentDefinition(["failed to request"]);
+    } else if (response.status === 200) {
+      const wordDef = response.data;
+      if (wordDef) {
+        store.updateCurrentDefinition(wordDef.list);
+      }
     }
   };
 

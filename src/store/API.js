@@ -2,7 +2,6 @@ import axios from "axios";
 
 import config from "../config";
 
-
 export const wordsArray = require("an-array-of-english-words");
 
 export const getDefByWord = (word) => {
@@ -17,7 +16,7 @@ export const getDefByWord = (word) => {
       },
     })
     .then(function (response) {
-      return response.data;
+      return response;
     })
     .catch(function (error) {
       console.error(error);

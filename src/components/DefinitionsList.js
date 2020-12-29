@@ -27,7 +27,7 @@ const DefinitionsList = observer(() => {
           wordWrap: "break-word",
           listStyle: "none",
           paddingLeft: "0",
-          margin:"-16px 0",
+          margin: "-16px 0",
           "&:after": {
             content: '""',
             display: "block",
@@ -37,10 +37,12 @@ const DefinitionsList = observer(() => {
       >
         {store.currentWordDef &&
           qualityDefinitionList.length > 0 &&
-          qualityDefinitionList.filter((defItem)=>defItem.definition.length > 1).map((defItem) => {
-            return <DefItem defItem={defItem} />;
-          })}
-        {store.currentWord && !qualityDefinitionList.length && <DefNotFound />}
+          qualityDefinitionList
+            .filter((defItem) => defItem.definition.length > 1)
+            .map((defItem) => {
+              return <DefItem defItem={defItem} />;
+            })}
+        {store.currentWordDef[0] === "failed to request" && <DefNotFound />}
       </ul>
     </>
   );
