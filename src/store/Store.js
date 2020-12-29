@@ -20,18 +20,18 @@ class Store {
   }
 
   get startLetterCount() {
-    const re = new RegExp(`^${this.currentWord}`, "ig");
+    const re = new RegExp(`^${this.currentWord}`, "i");
     return this.wordList.filter((d) => re.test(d)).length ?? 0;
   }
 
   get endLetterCount() {
-    const re = new RegExp(`${this.currentWord}$`, "ig");
+    const re = new RegExp(`${this.currentWord}$`, "i");
     return this.wordList.filter((d) => re.test(d)).length ?? 0;
   }
 
   get timesIncludedCount() {
     let len = 0;
-    const re = new RegExp(this.currentWord, "ig");
+    const re = new RegExp(this.currentWord, "i");
     this.wordList.forEach((element) => {
       if (element.match(re)) {
         len += element.match(re).length;
