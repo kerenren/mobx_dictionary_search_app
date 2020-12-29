@@ -21,7 +21,6 @@ class Store {
 
   get startLetterCount() {
     const re = new RegExp(`^${this.currentWord}`, "ig");
-    console.log(this.wordList.filter((d) => re.test(d)))
     return this.wordList.filter((d) => re.test(d)).length ?? 0;
   }
 
@@ -31,9 +30,14 @@ class Store {
   }
 
   get timesIncludedCount() {
-    return (
-      this.wordList.filter((d) => d.includes(this.currentWord)).length ?? 0
-    );
+    let len = 0;
+    const re = new RegExp(this.currentWord, "ig");
+    this.wordList.forEach((element) => {
+      if (element.match(re)) {
+        len += element.match(re).length;
+      }
+    });
+    return len;
   }
 
   get repeatedLetterCount() {
