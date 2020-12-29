@@ -10,7 +10,7 @@ const SearchResultTitle = ({ title }) => {
         color: "#4183f2",
         fontWeight: 500,
         letterSpacing: "0.5px",
-        lineHeight: "16px",
+        lineHeight: "40px",
       }}
     >
       {title}

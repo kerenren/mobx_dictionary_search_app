@@ -20,7 +20,7 @@ const StartSearch = () => {
       <img
         src="search.jpg"
         alt="search engine"
-        css={{ height: "90%"}}
+        css={{ maxHeight:"90%", maxWidth: "90%"}}
       />
     </div>
   );
