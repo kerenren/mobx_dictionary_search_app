@@ -3,9 +3,9 @@
 import React, { useContext } from "react";
 import { observer } from "mobx-react";
 
-import ContentRight from "./DefinitionContent";
+import DefinitionContent from "./DefinitionContent";
 import { mq } from "../store/mediaQuery";
-import ContentLeft from "./StatsContent";
+import StatsContent from "./StatsContent";
 import StartSearch from "./StartSearch";
 import { StoreContext } from "../App";
 
@@ -35,8 +35,8 @@ const Content = observer(() => {
       })}
     >
       {!store.currentWord && <StartSearch />}
-      {store.currentWord && <ContentLeft />}
-      {store.currentWord && <ContentRight />}
+      {store.currentWord && <StatsContent />}
+      {store.currentWord && <DefinitionContent />}
     </div>
   );
 });
