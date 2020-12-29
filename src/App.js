@@ -32,8 +32,18 @@ function App() {
           backgroundColor: "#f7f7f7",
         })}
       >
-        <Header />
-        <Content />
+        <Header  />
+        <div
+          css={mq({
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "calc(100vh - 200px)",
+            width:["100vw", "80vw"]
+          })}
+        >
+          <Content />
+        </div>
       </div>
     </StoreContext.Provider>
   );
