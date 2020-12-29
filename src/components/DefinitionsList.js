@@ -37,7 +37,7 @@ const DefinitionsList = observer(() => {
       >
         {store.currentWordDef &&
           qualityDefinitionList.length > 0 &&
-          qualityDefinitionList.map((defItem) => {
+          qualityDefinitionList.filter((defItem)=>defItem.definition.length > 1).map((defItem) => {
             return <DefItem defItem={defItem} />;
           })}
         {store.currentWord && !qualityDefinitionList.length && <DefNotFound />}
