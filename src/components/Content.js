@@ -3,9 +3,9 @@
 import React, { useContext } from "react";
 import { observer } from "mobx-react";
 
-import ContentRight from "./ContentRight";
+import ContentRight from "./DefinitionContent";
 import { mq } from "../store/mediaQuery";
-import ContentLeft from "./ContentLeft";
+import ContentLeft from "./StatsContent";
 import StartSearch from "./StartSearch";
 import { StoreContext } from "../App";
 

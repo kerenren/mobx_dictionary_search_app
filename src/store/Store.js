@@ -15,26 +15,29 @@ class Store {
     this.currentWordDef = defList;
   }
 
-  wordsCount() {
+  get wordsCount() {
     return this.currentWord.length;
   }
 
-  startLetterCount() {
+  get startLetterCount() {
     const re = new RegExp(`^${this.currentWord}`, "ig");
-    return this.wordList.filter((d) => re.test(d)).length;
+    console.log(this.wordList.filter((d) => re.test(d)))
+    return this.wordList.filter((d) => re.test(d)).length ?? 0;
   }
 
-  endLetterCount() {
+  get endLetterCount() {
     const re = new RegExp(`${this.currentWord}$`, "ig");
-    return this.wordList.filter((d) => re.test(d)).length;
+    return this.wordList.filter((d) => re.test(d)).length ?? 0;
   }
 
-  timesIncludedCount() {
-    return this.wordList.filter((d) => d.includes(this.currentWord)).length;
+  get timesIncludedCount() {
+    return (
+      this.wordList.filter((d) => d.includes(this.currentWord)).length ?? 0
+    );
   }
 
-  repeatedLetterCount() {
-    return this.wordList.filter((d) => d.match("^.*(.)\\1{1}.*$")).length;
+  get repeatedLetterCount() {
+    return this.wordList.filter((d) => d.match("^.*(.)\\1{1}.*$")).length ?? 0;
   }
 
   constructor() {

@@ -8,7 +8,7 @@ import { getDefByWord } from "../store/API";
 import { mq } from "../store/mediaQuery";
 import { StoreContext } from "../App";
 
-const ContentRight = observer(() => {
+const DefinitionContent = observer(() => {
   const store = useContext(StoreContext);
 
   const updateDefinitions = async (word) => {
@@ -40,4 +40,4 @@ const ContentRight = observer(() => {
   );
 });
 
-export default ContentRight;
+export default DefinitionContent;

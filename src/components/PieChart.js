@@ -10,25 +10,25 @@ const PieChart = observer(() => {
     {
       id: "Starting counter",
       label: `Starting`,
-      value: store.startLetterCount(),
+      value: store.startLetterCount,
       color: "hsl(37.3,97.5%,52.7%)",
     },
     {
       id: "Ending counter",
       label: `Ending`,
-      value: store.endLetterCount(),
+      value: store.endLetterCount,
       color: "hsl(92, 70%, 50%)",
     },
     {
       id: "Times counter",
       label: `Times`,
-      value: store.timesIncludedCount(),
+      value: store.timesIncludedCount,
       color: "hsl(221,50.6%,15.9%)",
     },
     {
       id: "Repeating counter",
       label: "repeating",
-      value: store.repeatedLetterCount(),
+      value: store.repeatedLetterCount,
       color: "hsl(37, 70%, 50%)",
     },
   ];
