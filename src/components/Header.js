@@ -37,7 +37,7 @@ const Header = () => {
         css={mq({
           flexGrow: 2,
           width: ["90%", "65%"],
-          padding: [["20px 0 0 0"], "0 20px 0 0"],
+          padding: ["20px 0 0 0", "0 20px 0 0"],
         })}
       >
         <SearchForm />
